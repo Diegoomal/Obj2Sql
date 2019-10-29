@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "_obj2sql/1.0.0": {
+        "runtime": {
+          "_obj2sql.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "_obj2sql/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

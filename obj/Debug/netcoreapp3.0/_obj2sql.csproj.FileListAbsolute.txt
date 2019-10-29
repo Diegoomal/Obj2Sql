@@ -1,0 +1,11 @@
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/bin/Debug/netcoreapp3.0/_obj2sql
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/bin/Debug/netcoreapp3.0/_obj2sql.deps.json
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/bin/Debug/netcoreapp3.0/_obj2sql.runtimeconfig.json
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/bin/Debug/netcoreapp3.0/_obj2sql.runtimeconfig.dev.json
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/bin/Debug/netcoreapp3.0/_obj2sql.dll
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/bin/Debug/netcoreapp3.0/_obj2sql.pdb
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/obj/Debug/netcoreapp3.0/_obj2sql.csprojAssemblyReference.cache
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/obj/Debug/netcoreapp3.0/_obj2sql.AssemblyInfoInputs.cache
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/obj/Debug/netcoreapp3.0/_obj2sql.AssemblyInfo.cs
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/obj/Debug/netcoreapp3.0/_obj2sql.dll
+/home/madonado/Desktop/exemplos/dotnet/_obj2sql/obj/Debug/netcoreapp3.0/_obj2sql.pdb
