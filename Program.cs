@@ -36,7 +36,10 @@ namespace Obj2Sql {
         static void Main(string[] args) {
 
             Pessoa p = new Pessoa() { Id = 1, Nome = "Diego", Sobrenome = "Maldonado" };
-            Select(p);
+
+            // Select(p);
+
+            Insert(p);
 
             // string s = p.GetType().GetProperties().Where(x => x.Name.ToLower() == "id").FirstOrDefault().ToString().ToLower();
             // System.Console.WriteLine(s);
@@ -74,8 +77,8 @@ namespace Obj2Sql {
 
         private static void Insert(Pessoa p) {
 
-            // Sql sqlInsert = SqlBuilderInstanceInsert.SqlInsert.Create().Build();
-            // System.Console.WriteLine(sqlInsert);
+            Sql sqlInsert = SqlBuilderInstanceInsert.SqlInsert.Create(p).Fields().Returning().Build();
+            System.Console.WriteLine(sqlInsert);
 
             // Sql sqlInsertReturning = SqlBuilderInstanceInsert.SqlInsert.Create().Returning().Build();
             // System.Console.WriteLine(sqlInsertReturning);

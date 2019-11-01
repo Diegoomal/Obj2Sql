@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Obj2Sql {    
     public class SqlBuilderImplInsertReturning<T>: 
-        SqlBuilderImplCreateInsert<SqlBuilderImplInsertReturning<T>> where T: 
+        SqlBuilderImplInsertFields<SqlBuilderImplInsertReturning<T>> where T: 
         SqlBuilderImplInsertReturning<T> {
         public T Returning(){
-            sql.Desc += "Returning";
+            sql.Desc += "Returning ID";
             return (T)this;
         }
     }

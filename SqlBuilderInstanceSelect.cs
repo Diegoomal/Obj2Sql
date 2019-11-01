@@ -9,7 +9,7 @@ namespace Obj2Sql {
     //     public static SqlBuilderInstance NewSql => new SqlBuilderInstance();
     // }
 
-    // aparece o metodo CREATE e WHERE
+    // aparece o metodo CREATE, FIELDS e WHERE
     public class SqlBuilderInstanceSelect: SqlBuilderImplSelecWhere<SqlBuilderInstanceSelect> {
         public static SqlBuilderInstanceSelect SqlSelect => new SqlBuilderInstanceSelect();
     }
