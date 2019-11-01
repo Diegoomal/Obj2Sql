@@ -39,7 +39,9 @@ namespace Obj2Sql {
 
             // Select(p);
 
-            Insert(p);
+            // Insert(p);
+
+            Delete(p);
 
             // string s = p.GetType().GetProperties().Where(x => x.Name.ToLower() == "id").FirstOrDefault().ToString().ToLower();
             // System.Console.WriteLine(s);
@@ -82,6 +84,13 @@ namespace Obj2Sql {
 
             // Sql sqlInsertReturning = SqlBuilderInstanceInsert.SqlInsert.Create().Returning().Build();
             // System.Console.WriteLine(sqlInsertReturning);
+
+        }
+
+        private static void Delete(Pessoa p) {
+
+            Sql sql1 = SqlBuilderInstanceDelete.SqlDelete.Create(p).Build();
+            System.Console.WriteLine(sql1);
 
         }
 
