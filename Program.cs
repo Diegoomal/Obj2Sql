@@ -53,27 +53,30 @@ namespace Obj2Sql {
 
             System.Console.WriteLine(Environment.NewLine + "SELECT" + Environment.NewLine);
 
-            System.Console.WriteLine("---");
             System.Console.WriteLine("Select.Create(objeto).Build()");
             Sql sql1 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Build();
             System.Console.WriteLine(sql1);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Select.Create(objeto).Fields().Build()");
             Sql sql2 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields().Build();
             System.Console.WriteLine(sql2);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Select.Create(objeto).Fields(string[]).Build()");
             Sql sql3 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields(campos).Build();
             System.Console.WriteLine(sql3);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Select.Create(objeto).Fields().Where(string).Build()");
             Sql sql4 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields().Where("id").Build();
             System.Console.WriteLine(sql4);
 
             System.Console.WriteLine("---");
+            
             System.Console.WriteLine("Select.Create(objeto).Fields(objeto, string[]).Where(string).Build()");
             Sql sql5 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields(campos).Where("id").Build();
             System.Console.WriteLine(sql5);
@@ -89,27 +92,30 @@ namespace Obj2Sql {
 
             System.Console.WriteLine(Environment.NewLine + "INSERT" + Environment.NewLine);
 
-            System.Console.WriteLine("---");
             System.Console.WriteLine("Insert.CreateByObject(objeto).Build()");
             Sql sql1 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Build();
             System.Console.WriteLine(sql1);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Insert.CreateByObject(objeto).Fields().Build()");
             Sql sql2 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Fields().Build();
             System.Console.WriteLine(sql2);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Insert.CreateByObject(objeto).Fields(string[]).Build()");
             Sql sql3 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Fields(campos).Build();
             System.Console.WriteLine(sql3);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Insert.CreateByObject(objeto).Fields().Returning().Build()");
             Sql sql4 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Fields().Returning().Build();
             System.Console.WriteLine(sql4);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Insert.CreateByObject(objeto).Fields().Returning(string[]).Build()");
             Sql sql5 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Fields(campos).Returning().Build();
             System.Console.WriteLine(sql5);
@@ -120,12 +126,12 @@ namespace Obj2Sql {
 
             System.Console.WriteLine(Environment.NewLine + "DELETE" + Environment.NewLine);
 
-            System.Console.WriteLine("---");
             System.Console.WriteLine("Delete.CreateByObject(objeto).Build()");
             Sql sql1 = SqlBuilderInstanceDelete.Sql.CreateByObject(p).Build();
             System.Console.WriteLine(sql1);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Delete.CreateByObject(objeto).Where(string).Build()");
             Sql sql2 = SqlBuilderInstanceDelete.Sql.CreateByObject(p).Where("id").Build();
             System.Console.WriteLine(sql2);
@@ -136,27 +142,30 @@ namespace Obj2Sql {
 
             System.Console.WriteLine(Environment.NewLine + "UPDATE" + Environment.NewLine);
 
-            System.Console.WriteLine("---");
             System.Console.WriteLine("Update.CreateByObject(objeto).Build()");
             Sql sql1 = SqlBuilderInstanceUpdate.Sql.CreateByObject(p).Build();
             System.Console.WriteLine(sql1);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Update.CreateByObject(objeto).Fields().Build()");
             Sql sql2 = SqlBuilderInstanceUpdate.Sql.CreateByObject(p).Fields().Build();
             System.Console.WriteLine(sql2);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Update.CreateByObject(objeto).Fields(string[]).Build()");
             Sql sql3 = SqlBuilderInstanceUpdate.Sql.CreateByObject(p).Fields(campos).Build();
             System.Console.WriteLine(sql3);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Update.CreateByObject(objeto).Fields().Where(string).Build()");
             Sql sql4 = SqlBuilderInstanceUpdate.Sql.CreateByObject(p).Fields().Where("id").Build();
             System.Console.WriteLine(sql4);
 
             System.Console.WriteLine("---");
+
             System.Console.WriteLine("Update.CreateByObject(objeto).Fields(string[]).Where(string).Build()");
             Sql sql5 = SqlBuilderInstanceUpdate.Sql.CreateByObject(p).Fields(campos).Where("id").Build();
             System.Console.WriteLine(sql5);
