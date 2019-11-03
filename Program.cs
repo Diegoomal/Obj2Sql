@@ -95,9 +95,19 @@ namespace Obj2Sql {
             System.Console.WriteLine(sql2);
 
             System.Console.WriteLine("---");
-            System.Console.WriteLine("Insert.CreateByObject(objeto).Fields().Returning().Build()");
-            Sql sql3 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Fields().Returning().Build();
+            System.Console.WriteLine("Insert.CreateByObject(objeto).Fields(string[]).Build()");
+            Sql sql3 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Fields(campos).Build();
             System.Console.WriteLine(sql3);
+
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Insert.CreateByObject(objeto).Fields().Returning().Build()");
+            Sql sql4 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Fields().Returning().Build();
+            System.Console.WriteLine(sql4);
+
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Insert.CreateByObject(objeto).Fields().Returning(string[]).Build()");
+            Sql sql5 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Fields(campos).Returning().Build();
+            System.Console.WriteLine(sql5);
 
         }
 

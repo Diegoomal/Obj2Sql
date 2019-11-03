@@ -8,8 +8,25 @@ namespace Obj2Sql {
         SqlBuilderImplInsertReturning<T> {
 
         public T Returning(){
-            sql.SqlString += "Returning ID";
+            
+            sql.SqlString = sql.SqlString.Replace(";", "");
+
+            sql.SqlString += " returning id;";
             return (T)this;
+            
+        }
+
+        public T Returning(string campo){
+            
+            if(string.IsNullOrEmpty(campo)) {
+                sql.SqlString = "erro";
+            }
+
+            sql.SqlString = sql.SqlString.Replace(";", "");
+
+            sql.SqlString += " returning " + campo.ToLower();
+            return (T)this;
+
         }
         
     }
