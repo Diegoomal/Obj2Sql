@@ -4,14 +4,8 @@ using System.Text;
 
 namespace Obj2Sql {
 
-    // aparece somente apenas o metodo CREATE
-    // public class SqlBuilderInstance: SqlBuilderImplCreateSelect<SqlBuilderInstance> {    
-    //     public static SqlBuilderInstance NewSql => new SqlBuilderInstance();
-    // }
-
-    // aparece o metodo CREATE, FIELDS e WHERE
     public class SqlBuilderInstanceDelete: SqlBuilderImplDeleteCreate<SqlBuilderInstanceDelete> {
-        public static SqlBuilderInstanceDelete SqlDelete => new SqlBuilderInstanceDelete();
+        public static SqlBuilderInstanceDelete Sql => new SqlBuilderInstanceDelete();
     }
 
 }

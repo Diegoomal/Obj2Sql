@@ -8,17 +8,12 @@ namespace Obj2Sql {
         SqlBuilder where T: 
         SqlBuilderImplSelectCreate<T> {
 
-
-        public T Create(object o) {
-            sql.Desc = CreateSelect(o);
+        public T CreateByObject(object o) {
+            this.sql.SetTable(o);
+            string sProps = string.Join(", ", this.sql.Tabela.GetOnlyProperties());
+            this.sql.SqlString = $"select { sProps } from { this.sql.Tabela.Nome.ToLower() };";
             return (T)this;
         }
-
-        private string CreateSelect(object o) {
-            string[] campos = o.GetType().GetProperties().Select(x => x.Name.ToLower()).ToArray();
-            return string.Format("select {0} from {1};", string.Join(", ", campos), o.GetType().Name.ToLower());
-        }
-
 
     }
 }

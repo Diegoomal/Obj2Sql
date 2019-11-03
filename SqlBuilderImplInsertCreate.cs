@@ -8,31 +8,21 @@ namespace Obj2Sql {
         SqlBuilder where T: 
         SqlBuilderImplInsertCreate<T> {
 
+        public T CreateByObject(object o) {
 
-        public T Create(object o) {
-            sql.Desc = CreateInsert(o);
-            return (T)this;
-        }
+            sql.SetTable(o);
 
-        private string CreateInsert(object o) {
-
-            List<string> campos = new List<string>();
-            List<string> valores = new List<string>();
-            System.Reflection.PropertyInfo[] props = o.GetType().GetProperties();
-
-            for (int i = 0; i < props.Length - 1; i++) {
-                string sCampo = props[i].Name.ToLower();
-                string sValor = props[i].GetValue(o).ToString();
-                campos.Add(sCampo);
-                valores.Add(sValor);
-            }
-
-            return string.Format("insert into {0} ({1}) values ({2});", 
-                o.GetType().Name.ToLower(),
+            string[] campos = sql.Tabela.GetOnlyProperties();
+            string[] valores = sql.Tabela.GetOnlyValues();
+            
+            sql.SqlString = string.Format("insert into {0} ({1}) values ({2});", 
+                sql.Tabela.Nome.ToLower(),
                 string.Join(", ", campos), 
                 string.Join(", ", valores));
-        }
 
+            return (T)this;
+
+        }
 
     }
 }

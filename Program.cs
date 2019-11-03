@@ -37,11 +37,11 @@ namespace Obj2Sql {
 
             Pessoa p = new Pessoa() { Id = 1, Nome = "Diego", Sobrenome = "Maldonado" };
 
-            // Select(p);
+            Select(p);
 
             // Insert(p);
 
-            Delete(p);
+            // Delete(p);
 
             // string s = p.GetType().GetProperties().Where(x => x.Name.ToLower() == "id").FirstOrDefault().ToString().ToLower();
             // System.Console.WriteLine(s);
@@ -50,37 +50,45 @@ namespace Obj2Sql {
 
         private static void Select(Pessoa p) {
 
+            string[] campos = new string[] { "id", "nome" };
+
             System.Console.WriteLine("---");
             System.Console.WriteLine("Select.Create(objeto).Build()");
-            Sql sql1 = SqlBuilderInstanceSelect.SqlSelect.Create(p).Build();
+            Sql sql1 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Build();
             System.Console.WriteLine(sql1);
 
             System.Console.WriteLine("---");
             System.Console.WriteLine("Select.Create(objeto).Fields().Build()");
-            Sql sql2 = SqlBuilderInstanceSelect.SqlSelect.Create(p).Fields().Build();
+            Sql sql2 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields().Build();
             System.Console.WriteLine(sql2);
 
             System.Console.WriteLine("---");
-            System.Console.WriteLine("Select.Create(objeto).Fields(objeto, string[]).Build()");
-            Sql sql3 = SqlBuilderInstanceSelect.SqlSelect.Create(p).Fields(p, new string[] { "id", "nome" }).Build();
+            System.Console.WriteLine("Select.Create(objeto).Fields(string[]).Build()");
+            Sql sql3 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields(campos).Build();
             System.Console.WriteLine(sql3);
 
             System.Console.WriteLine("---");
-            System.Console.WriteLine("Select.Create(objeto).Fields().Where(objeto, string).Build()");
-            Sql sql4 = SqlBuilderInstanceSelect.SqlSelect.Create(p).Fields().Where(p, "id").Build();
+            System.Console.WriteLine("Select.Create(objeto).Fields().Where(string).Build()");
+            Sql sql4 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields().Where("id").Build();
             System.Console.WriteLine(sql4);
 
+
             System.Console.WriteLine("---");
-            System.Console.WriteLine("Select.Create(objeto).Fields(objeto, string[]).Where(objeto, string).Build()");
-            Sql sql5 = SqlBuilderInstanceSelect.SqlSelect.Create(p).Fields(p, new string[] { "id", "nome" }).Where(p, "id").Build();
+            System.Console.WriteLine("Select.Create(objeto).Fields(objeto, string[]).Where(string).Build()");
+            Sql sql5 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields(campos).Where("id").Build();
             System.Console.WriteLine(sql5);
+
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Select.Create(objeto).Fields(objeto, string[]).Where(string).Build()");
+            Sql sql6 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields(campos).Where("nome").Build();
+            System.Console.WriteLine(sql6);
 
         }
 
         private static void Insert(Pessoa p) {
 
-            Sql sqlInsert = SqlBuilderInstanceInsert.SqlInsert.Create(p).Fields().Returning().Build();
-            System.Console.WriteLine(sqlInsert);
+            // Sql sqlInsert = SqlBuilderInstanceInsert.SqlInsert.Create(p).Fields().Returning().Build();
+            // System.Console.WriteLine(sqlInsert);
 
             // Sql sqlInsertReturning = SqlBuilderInstanceInsert.SqlInsert.Create().Returning().Build();
             // System.Console.WriteLine(sqlInsertReturning);
@@ -89,8 +97,12 @@ namespace Obj2Sql {
 
         private static void Delete(Pessoa p) {
 
-            Sql sql1 = SqlBuilderInstanceDelete.SqlDelete.Create(p).Build();
-            System.Console.WriteLine(sql1);
+            // Sql sql1 = SqlBuilderInstanceDelete.SqlDelete.Create(p).Build();
+            // System.Console.WriteLine(sql1);
+
+        }
+
+        private static void Update(Pessoa p) {
 
         }
 

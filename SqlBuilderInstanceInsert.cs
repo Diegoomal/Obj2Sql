@@ -6,7 +6,7 @@ namespace Obj2Sql {
 
     // aparece o metodo CREATE, FIELDS e RETURNING
     public class SqlBuilderInstanceInsert: SqlBuilderImplInsertReturning<SqlBuilderInstanceInsert> {
-        public static SqlBuilderInstanceInsert SqlInsert => new SqlBuilderInstanceInsert();
+        public static SqlBuilderInstanceInsert Sql => new SqlBuilderInstanceInsert();
     }
 
 }

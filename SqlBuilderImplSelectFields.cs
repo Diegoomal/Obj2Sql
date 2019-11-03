@@ -12,27 +12,19 @@ namespace Obj2Sql {
             return (T)this;
         }
 
-        public T Fields(object o, string[] campos) {
-
+        public T Fields(string[] campos) {
             if(campos == null) {
-                sql.Desc = "erro";
+                sql.SqlString = "erro";
             } else if(campos.Length == 0) {
-                sql.Desc = "erro";
+                sql.SqlString = "erro";
             } else {
-                sql.Desc = string.Empty;
-                sql.Desc = CreateSelect(o, campos);
+                sql.SqlString = string.Empty;
+                string[] camposTabela = this.sql.Tabela.GetOnlyProperties();
+                string[] diffCampos = campos.Intersect(camposTabela).ToArray();
+                sql.SqlString = $"select { string.Join(", ", diffCampos) } from { this.sql.Tabela.Nome.ToLower() };";
             }
-
             return (T)this;
-
         }
-
-        private string CreateSelect(object o, string[] _campos) {
-            string[] campos = o.GetType().GetProperties().Select(x => x.Name.ToLower()).ToArray();
-            string[] diffCampos = campos.Intersect(_campos).ToArray();
-            return string.Format("select {0} from {1};", string.Join(", ", diffCampos), o.GetType().Name.ToLower());
-        }
-
 
     }
 }
