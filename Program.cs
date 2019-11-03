@@ -43,7 +43,9 @@ namespace Obj2Sql {
 
             // Insert(p, campos);
 
-            Delete(p, campos);
+            // Delete(p, campos);
+
+            Update(p, campos);
 
         }
 
@@ -126,6 +128,31 @@ namespace Obj2Sql {
         }
 
         private static void Update(Pessoa p, string[] campos) {
+
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Update.CreateByObject(objeto).Build()");
+            Sql sql1 = SqlBuilderInstanceUpdate.Sql.CreateByObject(p).Build();
+            System.Console.WriteLine(sql1);
+
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Update.CreateByObject(objeto).Fields().Build()");
+            Sql sql2 = SqlBuilderInstanceUpdate.Sql.CreateByObject(p).Fields().Build();
+            System.Console.WriteLine(sql2);
+
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Update.CreateByObject(objeto).Fields(string[]).Build()");
+            Sql sql3 = SqlBuilderInstanceUpdate.Sql.CreateByObject(p).Fields(campos).Build();
+            System.Console.WriteLine(sql3);
+
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Update.CreateByObject(objeto).Fields().Where(string).Build()");
+            Sql sql4 = SqlBuilderInstanceUpdate.Sql.CreateByObject(p).Fields().Where("id").Build();
+            System.Console.WriteLine(sql4);
+
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Update.CreateByObject(objeto).Fields(string[]).Where(string).Build()");
+            Sql sql5 = SqlBuilderInstanceUpdate.Sql.CreateByObject(p).Fields(campos).Where("id").Build();
+            System.Console.WriteLine(sql5);
 
         }
 
