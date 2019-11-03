@@ -11,9 +11,6 @@ namespace Obj2Sql {
         public T CreateByObject(object o) {
             this.sql.SetTable(o);
             
-            // string sProps = string.Join(", ", this.sql.Tabela.GetOnlyProperties());
-            // this.sql.SqlString = $"select { sProps } from { this.sql.Tabela.Nome.ToLower() };";
-            
             this.sql.SqlString = "update criado";
 
             Item[] itens = this.sql.Tabela.Itens;
@@ -44,7 +41,6 @@ namespace Obj2Sql {
             }
 
             this.sql.SqlString = $"update { this.sql.Tabela.Nome } set { string.Join(", ", camposValores.ToArray()) };";
-
 
             return (T)this;
         }
