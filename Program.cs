@@ -39,17 +39,19 @@ namespace Obj2Sql {
 
             string[] campos = new string[] { "id", "nome" };
 
-            // Select(p, campos);
+            Select(p, campos);
 
-            // Insert(p, campos);
+            Insert(p, campos);
 
-            // Delete(p, campos);
+            Delete(p, campos);
 
             Update(p, campos);
 
         }
 
         private static void Select(Pessoa p, string[] campos) {
+
+            System.Console.WriteLine(Environment.NewLine + "SELECT" + Environment.NewLine);
 
             System.Console.WriteLine("---");
             System.Console.WriteLine("Select.Create(objeto).Build()");
@@ -71,7 +73,6 @@ namespace Obj2Sql {
             Sql sql4 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields().Where("id").Build();
             System.Console.WriteLine(sql4);
 
-
             System.Console.WriteLine("---");
             System.Console.WriteLine("Select.Create(objeto).Fields(objeto, string[]).Where(string).Build()");
             Sql sql5 = SqlBuilderInstanceSelect.Sql.CreateByObject(p).Fields(campos).Where("id").Build();
@@ -85,6 +86,8 @@ namespace Obj2Sql {
         }
 
         private static void Insert(Pessoa p, string[] campos) {
+
+            System.Console.WriteLine(Environment.NewLine + "INSERT" + Environment.NewLine);
 
             System.Console.WriteLine("---");
             System.Console.WriteLine("Insert.CreateByObject(objeto).Build()");
@@ -115,6 +118,8 @@ namespace Obj2Sql {
 
         private static void Delete(Pessoa p, string[] campos) {
 
+            System.Console.WriteLine(Environment.NewLine + "DELETE" + Environment.NewLine);
+
             System.Console.WriteLine("---");
             System.Console.WriteLine("Delete.CreateByObject(objeto).Build()");
             Sql sql1 = SqlBuilderInstanceDelete.Sql.CreateByObject(p).Build();
@@ -128,6 +133,8 @@ namespace Obj2Sql {
         }
 
         private static void Update(Pessoa p, string[] campos) {
+
+            System.Console.WriteLine(Environment.NewLine + "UPDATE" + Environment.NewLine);
 
             System.Console.WriteLine("---");
             System.Console.WriteLine("Update.CreateByObject(objeto).Build()");
