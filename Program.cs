@@ -37,20 +37,17 @@ namespace Obj2Sql {
 
             Pessoa p = new Pessoa() { Id = 1, Nome = "Diego", Sobrenome = "Maldonado" };
 
-            Select(p);
+            string[] campos = new string[] { "id", "nome" };
 
-            // Insert(p);
+            // Select(p, campos);
 
-            // Delete(p);
+            Insert(p, campos);
 
-            // string s = p.GetType().GetProperties().Where(x => x.Name.ToLower() == "id").FirstOrDefault().ToString().ToLower();
-            // System.Console.WriteLine(s);
+            // Delete(p, campos);
 
         }
 
-        private static void Select(Pessoa p) {
-
-            string[] campos = new string[] { "id", "nome" };
+        private static void Select(Pessoa p, string[] campos) {
 
             System.Console.WriteLine("---");
             System.Console.WriteLine("Select.Create(objeto).Build()");
@@ -85,24 +82,33 @@ namespace Obj2Sql {
 
         }
 
-        private static void Insert(Pessoa p) {
+        private static void Insert(Pessoa p, string[] campos) {
 
-            // Sql sqlInsert = SqlBuilderInstanceInsert.SqlInsert.Create(p).Fields().Returning().Build();
-            // System.Console.WriteLine(sqlInsert);
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Insert.CreateByObject(objeto).Build()");
+            Sql sql1 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Build();
+            System.Console.WriteLine(sql1);
 
-            // Sql sqlInsertReturning = SqlBuilderInstanceInsert.SqlInsert.Create().Returning().Build();
-            // System.Console.WriteLine(sqlInsertReturning);
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Insert.CreateByObject(objeto).Fields().Build()");
+            Sql sql2 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Fields().Build();
+            System.Console.WriteLine(sql2);
+
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Insert.CreateByObject(objeto).Fields().Returning().Build()");
+            Sql sql3 = SqlBuilderInstanceInsert.Sql.CreateByObject(p).Fields().Returning().Build();
+            System.Console.WriteLine(sql3);
 
         }
 
-        private static void Delete(Pessoa p) {
+        private static void Delete(Pessoa p, string[] campos) {
 
             // Sql sql1 = SqlBuilderInstanceDelete.SqlDelete.Create(p).Build();
             // System.Console.WriteLine(sql1);
 
         }
 
-        private static void Update(Pessoa p) {
+        private static void Update(Pessoa p, string[] campos) {
 
         }
 
