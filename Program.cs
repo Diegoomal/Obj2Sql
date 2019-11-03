@@ -41,9 +41,9 @@ namespace Obj2Sql {
 
             // Select(p, campos);
 
-            Insert(p, campos);
+            // Insert(p, campos);
 
-            // Delete(p, campos);
+            Delete(p, campos);
 
         }
 
@@ -113,8 +113,15 @@ namespace Obj2Sql {
 
         private static void Delete(Pessoa p, string[] campos) {
 
-            // Sql sql1 = SqlBuilderInstanceDelete.SqlDelete.Create(p).Build();
-            // System.Console.WriteLine(sql1);
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Delete.CreateByObject(objeto).Build()");
+            Sql sql1 = SqlBuilderInstanceDelete.Sql.CreateByObject(p).Build();
+            System.Console.WriteLine(sql1);
+
+            System.Console.WriteLine("---");
+            System.Console.WriteLine("Delete.CreateByObject(objeto).Where(string).Build()");
+            Sql sql2 = SqlBuilderInstanceDelete.Sql.CreateByObject(p).Where("id").Build();
+            System.Console.WriteLine(sql2);
 
         }
 

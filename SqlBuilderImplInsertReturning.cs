@@ -7,26 +7,19 @@ namespace Obj2Sql {
         SqlBuilderImplInsertFields<SqlBuilderImplInsertReturning<T>> where T: 
         SqlBuilderImplInsertReturning<T> {
 
-        public T Returning(){
-            
+        public T Returning() {            
             sql.SqlString = sql.SqlString.Replace(";", "");
-
             sql.SqlString += " returning id;";
-            return (T)this;
-            
+            return (T)this;            
         }
 
-        public T Returning(string campo){
-            
+        public T Returning(string campo) {            
             if(string.IsNullOrEmpty(campo)) {
-                sql.SqlString = "erro";
+                sql.SqlString = "erro - IsNullOrEmpty - insert - returning";
             }
-
             sql.SqlString = sql.SqlString.Replace(";", "");
-
             sql.SqlString += " returning " + campo.ToLower();
             return (T)this;
-
         }
         
     }
