@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Obj2Sql {    
-    public class SqlBuilderImplInsertReturning<T>: 
-        SqlBuilderImplInsertFields<SqlBuilderImplInsertReturning<T>> where T: 
-        SqlBuilderImplInsertReturning<T> {
+namespace Obj2Sql.Insert {    
+    public class ImplReturning<T>: 
+        ImplFields<ImplReturning<T>> where T: 
+        ImplReturning<T> {
 
         public T Returning() {            
             sql.SqlString = sql.SqlString.Replace(";", "");

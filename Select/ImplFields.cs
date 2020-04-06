@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Obj2Sql {    
-    public class SqlBuilderImplSelecFields<T>: 
-        SqlBuilderImplSelectCreate<SqlBuilderImplSelecFields<T>> where T: 
-        SqlBuilderImplSelecFields<T> {
+namespace Obj2Sql.Select {    
+    public class ImplFields<T>: 
+        Create<ImplFields<T>> where T: 
+        ImplFields<T> {
 
         public T Fields(){
             return (T)this;

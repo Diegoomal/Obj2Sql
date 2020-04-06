@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Obj2Sql {
-    public class SqlBuilderImplUpdateCreate<T>: 
+namespace Obj2Sql.Update {
+    public class Create<T>: 
         SqlBuilder where T: 
-        SqlBuilderImplUpdateCreate<T> {
+        Create<T> {
 
         public T CreateByObject(object o) {
             this.sql.SetTable(o);

@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Obj2Sql {    
-    public class SqlBuilderImplUpdateFields<T>: 
-        SqlBuilderImplUpdateCreate<SqlBuilderImplUpdateFields<T>> where T: 
-        SqlBuilderImplUpdateFields<T> {
+namespace Obj2Sql.Insert {    
+    public class ImplFields<T>: 
+        Create<ImplFields<T>> where T: 
+        ImplFields<T> {
 
-        public T Fields(){
+        public T Fields() {
             return (T)this;
         }
 
         public T Fields(string[] campos) {
+            
             if(campos == null) {
                 sql.SqlString = "erro";
             } else if(campos.Length == 0) {
@@ -20,9 +21,8 @@ namespace Obj2Sql {
             } else {
                 
                 sql.SqlString = string.Empty;
-
                 Item[] itens = this.sql.Tabela.Itens.Where(    o => campos.Contains(o.Propriedade.ToLower())   ).ToArray();
-
+                
                 List<string> _campos = new List<string>();
                 List<string> _valores = new List<string>();
 
@@ -50,7 +50,8 @@ namespace Obj2Sql {
                 sql.SqlString = string.Format("insert into {0} ({1}) values ({2});",
                     this.sql.Tabela.Nome, string.Join(", ", _campos), string.Join(", ", _valores));
 
-            }
+            }// else
+
             return (T)this;
         }
 

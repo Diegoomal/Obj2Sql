@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Obj2Sql {    
-    public class SqlBuilderImplDeleteWhere<T>: 
-        SqlBuilderImplDeleteCreate<SqlBuilderImplDeleteWhere<T>> where T: 
-        SqlBuilderImplDeleteWhere<T> {
+namespace Obj2Sql.Select {    
+    public class ImplWhere<T>: 
+        ImplFields<ImplWhere<T>> where T: 
+        ImplWhere<T> {
 
         public T Where(string campo) {
 
@@ -47,7 +47,6 @@ namespace Obj2Sql {
                     }
 
                     break;
-                    
                 }
             }
 

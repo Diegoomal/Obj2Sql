@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Obj2Sql {
-    public class SqlBuilderImplSelectCreate<T>: 
+namespace Obj2Sql.Select {
+    public class Create<T>: 
         SqlBuilder where T: 
-        SqlBuilderImplSelectCreate<T> {
+        Create<T> {
 
         public T CreateByObject(object o) {
             this.sql.SetTable(o);
